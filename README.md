@@ -7,13 +7,12 @@ SEI Mariposa Capstone Project:  MERN app for National Parks
 | -------------------- | -------------- | ------------- | --------------- | 
 | /parks               | index          | GET           | read            | 
 | /parks/:id           | show           | GET           | read            | 
-| /parks/:id           | new            | GET           |                 | 
 | /parks/:id/tips      | create         | POST          | create          | 
-| /parks/:id/edit.     | edit           | GET           | read            | 
+| /parks/:id/edit      | edit           | GET           | read            | 
 | /parks/:id/edit/:id  | update         | PATCH/PUT     | update          | 
 | /parks/tips/:id      | destroy        | DELETE        | delete          | 
 | /myparks             | index          | GET           | read            | 
-| /*                   |                | GET           |                 |
+
 
 ## User Stories 
 - As a user of the national park tracker website, I want to be able to view a comprehensive list of all the national parks in order to plan my future trips.
