@@ -3,15 +3,17 @@ SEI Mariposa Capstone Project:  MERN app for National Parks
 
 
 ## Route Table
-|       **URL**        | **REST Route** | **HTTP Verb** | **CRUD Action** |        
-| -------------------- | -------------- | ------------- | --------------- | 
-| /parks               | index          | GET           | read            | 
-| /parks/:id           | show           | GET           | read            | 
-| /parks/:id/tips      | create         | POST          | create          | 
-| /parks/:id/edit      | edit           | GET           | read            | 
-| /parks/:id/edit/:id  | update         | PATCH/PUT     | update          | 
-| /parks/tips/:id      | destroy        | DELETE        | delete          | 
-| /myparks             | index          | GET           | read            | 
+|       **URL**                  | **REST Route** | **HTTP Verb** | **CRUD Action** |        
+| ------------------------------ | -------------- | ------------- | --------------- | 
+| /api/tips/park/:nationaParkId  | index          | GET           | read            | 
+| /api/tips:id                   | show           | GET           | read            | 
+| /api/tips                      | create         | POST          | create          | 
+| /api/tips/:id                  | edit           | GET           | read            | 
+| /api/tips/:id                  | update         | PATCH/PUT     | update          | 
+| /api/tips/:id                  | destroy        | DELETE        | delete          | 
+| /myparks                       | index          | GET           | read            | 
+| /parks                         | index          | GET           | read            | 
+| /parks/:id                     | show           | GET           | read            |
 
 
 ## User Stories 
