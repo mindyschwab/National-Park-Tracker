@@ -40,3 +40,4 @@ SEI Mariposa Capstone Project:  MERN app for National Parks
 - Add some stats about how many parks a user has visited 
 - filter the index page by some criteria, like region or state 
 - restrict the ability to edit/delete comments to the user who made the comment 
+- add search functionality for national parks
