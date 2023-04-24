@@ -13,16 +13,16 @@ function App() {
   const apiKey = import.meta.env.VITE_API_KEY
 
   useEffect(() => {
-    getData(`https://developer.nps.gov/api/v1/parks?limit=20&api_key=${apiKey}`)
+    getData(`https://developer.nps.gov/api/v1/parks?limit=468&api_key=${apiKey}`)
       .then(res => {
         setParks(res.data)
-        console.log(parks)
       })
   }, [])
 
   let parkContent = <p>Loading National Park information... </p>
+  let fileredParks = parks.filter(park => park.designation === "National Park")
   if (parks.length > 0) {
-    parkContent = parks.map((park, i) => <Card key={i} parkData={park} />)
+    parkContent = fileredParks.map((park, i) => <Card key={i} parkData={park} />)
   }
 
   return (
