@@ -1,15 +1,7 @@
-import { getTips } from "../../../utils/backend";
 import { useEffect, useState } from 'react'
 import TipSection from "../TipsSection"
 
 function DetailsPage({ parkData }) {
-    const [tips, setTips] = useState([])
-
-    // Query the database for all tips that pertain to this park
-    useEffect(() => {
-        getTips(parkData.id)
-            .then(tips => setTips(tips))
-    }, [])
 
     return (
         <>
@@ -21,7 +13,7 @@ function DetailsPage({ parkData }) {
 
             </div>
             <div className="m-5">
-                <TipSection tips={tips} parkId={parkData.id} updateTips={setTips} />
+                <TipSection parkId={parkData.id} />
             </div>
         </>
     )

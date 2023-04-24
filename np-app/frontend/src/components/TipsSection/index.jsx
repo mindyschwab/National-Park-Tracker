@@ -1,12 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { getTips, postTip } from '../../../utils/backend'
+import Tip from '../Tip'
 
-function TipSection({ tips, parkId, updateTips }) {
+function TipSection({ parkId }) {
+    const [tips, setTips] = useState([])
     const [showCreateForm, setShowCreateForm] = useState(false)
     const [createFormData, setCreateFormData] = useState({
         userName: '',
         tipContent: ''
     })
+
+    // Query the database for all comments that pertain to this artwork
+    useEffect(() => {
+        getTips(parkId)
+            .then(tips => setTips(tips))
+    }, [])
 
     // Update the tips form fields as the user types
     function handleInputChange(event) {
@@ -33,12 +41,15 @@ function TipSection({ tips, parkId, updateTips }) {
         setShowCreateForm(false)
         // create the tip in the backend
         postTip({ ...createFormData, parkId: parkId })
-            .then(() => {
-                // refresh the tips section data
-                getTips(parkId)
-                    .then(tips => updateTips(tips))
-            })
+            .then(() => refreshTips())
     }
+
+    // Update the tips in the tips section after a database transaction
+    function refreshTips() {
+        getTips(parkId)
+            .then(newTipsData => setTips(newTipsData))
+    }
+
     // conditionally display the text of the create form button
     let btnText = 'Add Tip'
     if (showCreateForm) {
@@ -48,21 +59,15 @@ function TipSection({ tips, parkId, updateTips }) {
     // conditionally render tips
     let tipElements = [<p key='0' className='text-center'>No tip yet. Be the first to add a tip for this park!</p>]
     if (tips.length > 0) {
-        tipElements = tips.map(tips => {
-            return <div
-                key={tips._id}
-                className="">
-                <p className="font-bold">{tips.userName}</p>
-                <p className="font-bold">{tips.tipContent}</p>
-                <div className="flex justify-end">
-                    <button className=" m-2">
-                        Edit
-                    </button>
-                    <button className="m-2">
-                        Delete
-                    </button>
-                </div>
-            </div>
+        tipElements = tips.map(tip => {
+            return <Tip
+                key={tip._id}
+                data={tip}
+                refreshTips={refreshTips}
+            />
+
+
+
         })
     }
     return (
