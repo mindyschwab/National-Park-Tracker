@@ -5,10 +5,12 @@ import Navbar from "../Navbar"
 import HomePage from "../HomePage"
 import AboutPage from "../AboutPage"
 import Card from "../Card"
+import DetailsPage from "../DetailsPage"
 import './App.css'
 
 function App() {
   const [parks, setParks] = useState([])
+  const [detailPage, setDetailPage] = useState()
 
   const apiKey = import.meta.env.VITE_API_KEY
 
@@ -22,7 +24,7 @@ function App() {
   let parkContent = <p>Loading National Park information... </p>
   let fileredParks = parks.filter(park => park.designation === "National Park")
   if (parks.length > 0) {
-    parkContent = fileredParks.map((park, i) => <Card key={i} parkData={park} />)
+    parkContent = fileredParks.map((park, i) => <Card key={i} parkData={park} updateDetailPage={setDetailPage} />)
   }
 
   return (
@@ -34,6 +36,7 @@ function App() {
           <HomePage
             parkContent={parkContent}
           />} />
+        <Route path='/details/:id' element={<DetailsPage parkData={detailPage} />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
     </>

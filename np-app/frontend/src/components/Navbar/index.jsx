@@ -5,10 +5,10 @@ function Navbar() {
         <nav>
             <ul className='flex text-xl p-2'>
                 <Link to="/">
-                    <li className="mr-6 text-white hover:text-orange-300">National Parks Tracker</li>
+                    <li className="mx-4">National Parks Tracker</li>
                 </Link>
                 <Link to="/about">
-                    <li className="mr-6 text-white hover:text-orange-300">About</li>
+                    <li className="">About</li>
                 </Link>
             </ul>
         </nav>
