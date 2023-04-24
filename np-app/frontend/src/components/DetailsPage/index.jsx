@@ -1,5 +1,6 @@
 import { getTips } from "../../../utils/backend";
 import { useEffect, useState } from 'react'
+import TipSection from "../TipsSection"
 
 function DetailsPage({ parkData }) {
     const [tips, setTips] = useState([])
@@ -13,8 +14,12 @@ function DetailsPage({ parkData }) {
 
     return (
         <>
-            <p>{parkData.fullName}</p>
-            <img className="w-1/2" src={parkData.images[0].url} alt="park image" />
+            <div>
+                <p>{parkData.fullName}</p>
+                <img className="w-1/2" src={parkData.images[0].url} alt="park image" />
+            </div>
+            <TipSection tips={tips} parkId={parkData.id} />
+
         </>
     )
 
