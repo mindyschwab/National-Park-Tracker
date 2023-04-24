@@ -9,7 +9,6 @@ function DetailsPage({ parkData }) {
     useEffect(() => {
         getTips(parkData.id)
             .then(tips => setTips(tips))
-        console.log(tips)
     }, [])
 
     return (
@@ -17,9 +16,13 @@ function DetailsPage({ parkData }) {
             <div>
                 <p>{parkData.fullName}</p>
                 <img className="w-1/2" src={parkData.images[0].url} alt="park image" />
-            </div>
-            <TipSection tips={tips} parkId={parkData.id} />
+                <p>{parkData.description}</p>
+                <a href={parkData.url}>National Park Service Website</a>
 
+            </div>
+            <div className="m-5">
+                <TipSection tips={tips} parkId={parkData.id} updateTips={setTips} />
+            </div>
         </>
     )
 

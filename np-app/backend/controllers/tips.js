@@ -18,7 +18,7 @@ const db = require('../models')
 --------------------------------------------------------------- */
 // Index Route (GET/Read): Will display all tips
 router.get('/park/:parkId', function (req, res) {
-    db.Tip.find({ nationalParkId: req.params.nationalParkId })
+    db.Tip.find({ parkId: req.params.parkId })
         .then(tips => res.json(tips))
 })
 
