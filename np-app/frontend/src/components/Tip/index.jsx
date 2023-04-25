@@ -31,18 +31,18 @@ function Tip({ data, refreshTips }) {
     }
 
     let tipElement =
-        <div>
-            <p className="font-bold">{data.userName}</p>
-            <p className="font-bold">{data.tipContent}</p>
+        <div className="m-2 bg-warm-gray-200">
+            <p className=" flex justify-start">{data.userName}</p>
+            <p className=" flex justify-start">{data.tipContent}</p>
             <div className="flex justify-end">
                 <button
                     onClick={() => { setShowEditForm(true) }}
-                    className=" m-2">
+                    className=" bg-transparent hover:bg-indigo-500 text-indigo-700 font-semibold hover:text-white py-2 px-3 border border-indigo-600 hover:border-transparent rounded m-2">
                     Edit
                 </button>
                 <button
                     onClick={handleDelete}
-                    className="m-2">
+                    className="bg-transparent hover:bg-orange-500 text-orange-700 font-semibold hover:text-white py-2 px-3 border border-orange-600 hover:border-transparent rounded m-2">
                     Delete
                 </button>
             </div>

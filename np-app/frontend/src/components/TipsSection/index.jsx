@@ -57,7 +57,7 @@ function TipSection({ parkId }) {
     }
 
     // conditionally render tips
-    let tipElements = [<p key='0' className='text-center'>No tip yet. Be the first to add a tip for this park!</p>]
+    let tipElements = [<p key='0' className='text-center'>No tips yet. Be the first to add a tip for this park!</p>]
     if (tips.length > 0) {
         tipElements = tips.map(tip => {
             return <Tip
@@ -75,7 +75,7 @@ function TipSection({ parkId }) {
             <h2 className=''>Tips</h2>
             <button
                 onClick={toggleCreateForm}
-                className=" text-white hover:bg-green-800 font-bold py-2 px-4 bg-green-900 rounded cursor-pointer mr-2"
+                className="bg-green-700 hover:bg-green-600 text-white font-semibold hover:text-white py-2 px-3 border border-green-700 hover:border-transparent rounded"
             >
                 {btnText}
             </button>

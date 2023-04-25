@@ -23,25 +23,33 @@ function DetailsPage({ parkData, updatePark }) {
     if (parkData) {
         page =
             <div>
-                <div>
-                    <p>{parkData.fullName}</p>
-                    <img className="w-1/2" src={parkData.images[0].url} alt="park image" />
-                    <p>{parkData.description}</p>
-                    <a href={parkData.url}>National Park Service Website</a>
+                <p className='text-2xl p-4'>{parkData.fullName}</p>
+                <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-2 content-center m-2">
 
-                </div>
-                <div className="m-5">
-                    <TipSection parkId={parkData.id} />
-                </div>
+                    <div className=''>
+                        <img className="w-full object-cover p-2" src={parkData.images[0].url} alt="park image" />
+                    </div>
+                    <div className='p-2'>
+                        <p className='leading-relaxed'>{parkData.description}</p>
+                        <br />
+                        <a href={parkData.url} className='underline hover:text-blue-600'>National Park Service Website</a>
 
-                <div>
-                    <iframe
-                        src={`https://maps.google.com/maps?q=${parkData.fullName}&z=8&output=embed`}
-                        width="600"
-                        height="450"
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                    />
+                    </div>
+                    <div className='p-2'>
+                        <iframe
+                            src={`https://maps.google.com/maps?q=${parkData.fullName}&z=8&output=embed`}
+                            width="500"
+                            height="450"
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        />
+                    </div>
+                    <div className="p-2">
+                        <TipSection parkId={parkData.id} />
+                    </div>
+
+
+
                 </div>
             </div>
 
