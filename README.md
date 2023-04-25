@@ -16,7 +16,7 @@ SEI Mariposa Capstone Project:  MERN app for National Parks
 | /parks/:id                     | show           | GET           | read            |
 
 ## Resources used
-- Resource for responsive navbar using tailwind and react: https://dev.to/prnvbirajdar/the-easiest-way-to-build-a-responsive-navbar-using-tailwind-react-2803
+- Resource for responsive navbar using tailwind and react: https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/navbars
 
 ## User Stories 
 - As a user of the national park tracker website, I want to be able to view a comprehensive list of all the national parks in order to plan my future trips.

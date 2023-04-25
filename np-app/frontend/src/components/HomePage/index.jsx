@@ -1,9 +1,9 @@
 function HomePage(props) {
     return (
-        <div>
-            <h1>Home Page</h1>
+        <div className="grid 2xl:grid-cols-3 md:grid-cols-2 gap-2 content-center">
             {props.parkContent}
         </div>
+
     );
 }
 

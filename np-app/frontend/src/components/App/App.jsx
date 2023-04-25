@@ -31,17 +31,20 @@ function App() {
   return (
     <>
       <Navbar />
-      <h1>NP App</h1>
-      <Routes>
-        <Route path="/" element={
-          <HomePage
-            parkContent={parkContent}
-          />} />
-        <Route path='/details/:id' element={<DetailsPage parkData={detailPage} updatePark={setDetailPage} />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/my-parks" element={<MyParksPage />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={
+            <HomePage
+              parkContent={parkContent}
+            />} />
+          <Route path='/details/:id' element={<DetailsPage parkData={detailPage} updatePark={setDetailPage} />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/my-parks" element={<MyParksPage />} />
+        </Routes>
+
+      </main>
     </>
+
   )
 }
 
