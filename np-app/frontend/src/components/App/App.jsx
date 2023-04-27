@@ -7,7 +7,7 @@ import AboutPage from "../AboutPage"
 import Card from "../Card"
 import DetailsPage from "../DetailsPage"
 import MyParksPage from "../MyParksPage"
-import SignUpPage from "../SignUpPage"
+import AuthFormPage from "../AuthFormPage";
 import NotFoundPage from "../NotFoundPage";
 import './App.css'
 
@@ -43,7 +43,7 @@ function App() {
           <Route path='/details/:id' element={<DetailsPage parkData={detailPage} updatePark={setDetailPage} />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/my-parks" element={<MyParksPage />} />
-          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/auth/:formType" element={<AuthFormPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
 

@@ -1,14 +1,8 @@
 import { Link } from "react-router-dom"
 import { useState } from "react";
-// import { useRef } from "react";
-// import { Transition } from "@headlessui/react";
-
-
 
 // resource for responsive navbar using tailwind and react: https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/navbars
 function Navbar() {
-    // const [isOpen, setIsOpen] = useState(false);
-    // const ref = useRef()
     const [navbarOpen, setNavbarOpen] = useState(false);
     return (
         <>
@@ -26,7 +20,6 @@ function Navbar() {
                             type="button"
                             onClick={() => setNavbarOpen(!navbarOpen)}
                         > Menu
-                            {/* <i className="fa fa-bars"></i> */}
                         </button>
                     </div>
                     <div
@@ -51,21 +44,20 @@ function Navbar() {
                                     </p>
                                 </li>
                             </Link>
-                            <Link to="/signup">
+                            <Link to="/auth/signup">
                                 <li className="nav-item">
                                     <p className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
                                         <span className="ml-2">Sign Up</span>
                                     </p>
                                 </li>
                             </Link>
-                            <li className="nav-item">
-                                <a
-                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                                    href="#"
-                                >
-                                    <span className="ml-2">Log In</span>
-                                </a>
-                            </li>
+                            <Link to="/auth/login">
+                                <li className="nav-item">
+                                    <p className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                        <span className="ml-2">Log In</span>
+                                    </p>
+                                </li>
+                            </Link>
                         </ul>
                     </div>
                 </div>

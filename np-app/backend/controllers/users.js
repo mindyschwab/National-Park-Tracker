@@ -23,6 +23,7 @@ const config = require('../../jwt.config.js')
 --------------------------------------------------------------- */
 router.post('/signup', (req, res) => {
     // Create a new user
+    console.log(req.body)
     db.User.create(req.body)
         .then(user => {
             // if the database creates a user successfully, assign a JWT to the user and send the JWT as the response
@@ -30,10 +31,11 @@ router.post('/signup', (req, res) => {
             res.json({ token: token })
         })
         // send an error if the database fails to create a user
-        .catch(() => {
-            res.sendStatus(401)
-                .json({ data: 'Could not create a new user, try again' })
+        .catch((error) => {
+            console.log(error)
+            res.status(401).json({ data: 'Could not create a new user, try again' })
         })
+
 })
 
 // LOG IN (log into a user account)
@@ -53,7 +55,7 @@ router.post('/login', async (req, res) => {
         })
         // if the user was not found in the database OR their password was incorrect, send an error
     } else {
-        res.sendStatus(401)
+        return res.status(401)
     }
 })
 

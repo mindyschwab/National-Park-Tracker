@@ -3,13 +3,13 @@ const tips = [
         userName: "John Doe",
         tipContent: "Bring sunscreen and plenty of water.",
         parkId: "6DA17C86-088E-4B4D-B862-7C1BD5CF236B",
-        userId: "6449b41a2e89127599fe0d24",
+        userId: "644ada7173fe5827923b1d28",
     },
     {
         userName: "Jane Smith",
         tipContent: "The hiking trails can be steep, so wear sturdy shoes.",
         parkId: "6DA17C86-088E-4B4D-B862-7C1BD5CF236B",
-        userId: "6449b41a2e89127599fe0d24",
+        userId: "644ada7173fe5827923b1d28",
     },
     {
         userName: "Mike Johnson",
