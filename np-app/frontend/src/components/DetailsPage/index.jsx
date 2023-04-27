@@ -19,17 +19,22 @@ function DetailsPage({ parkData, updatePark }) {
     let page = <p>Loading National Park information... </p>
     if (parkData) {
         page =
-            <div className='p-4'>
+            <div className='p-8'>
                 <p className='text-2xl p-4'>{parkData.fullName}</p>
-                <div className="grid grid-cols-1 gap-2 content-center m-2">
+                <div className="grid grid-cols-1 gap-2  m-2">
 
                     <div className=''>
                         <img className="w-full object-cover p-2" src={parkData.images[0].url} alt="park image" />
                     </div>
-                    <div className='p-2'>
+                    <div className='p-2 px-8'>
                         <p className='leading-relaxed text-left'>{parkData.description}</p>
                         <br />
-                        <a href={parkData.url} className='underline hover:text-blue-600'>National Park Service Website</a>
+                        <p className='text-left'>
+                            <a href={parkData.url} className='underline text-blue-600'>National Park Service Website</a>
+                        </p>
+                        <br />
+                        <p className='leading-relaxed text-left'> Weather: {parkData.weatherInfo}</p>
+
 
                     </div>
                 </div>

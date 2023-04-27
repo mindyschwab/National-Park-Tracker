@@ -18,6 +18,8 @@ SEI Mariposa Capstone Project:  MERN app for National Parks
 ## Resources used
 - Resource for responsive navbar using tailwind and react: https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/navbars
 - 404 Image: Photo by <a href="https://unsplash.com/@dallehj?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Daniel Jensen</a> on <a href="https://unsplash.com/photos/UDleHDOhBZ8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+- About Image: Photo by <a href="https://unsplash.com/@rocinante_11?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mick Haupt</a> on <a href="https://unsplash.com/s/photos/national-park?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
 
 ## User Stories 

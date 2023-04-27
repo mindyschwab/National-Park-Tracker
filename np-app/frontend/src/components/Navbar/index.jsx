@@ -10,7 +10,7 @@ function Navbar() {
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                     <div className="w-full relative flex justify-between md:w-auto md:static md:block md:justify-start">
                         <Link to="/">
-                            <p className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white">
+                            <p className="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white">
                                 National Park Tracker
                             </p>
                         </Link>
@@ -32,28 +32,28 @@ function Navbar() {
                         <ul className="flex flex-col md:flex-row list-none md:ml-auto">
                             <Link to="/my-parks">
                                 <li className="nav-item">
-                                    <p className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                    <p className="px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75">
                                         <span className="ml-2">My Parks</span>
                                     </p>
                                 </li>
                             </Link>
                             <Link to="/about">
                                 <li className="nav-item">
-                                    <p className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                    <p className="px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75">
                                         <span className="ml-2">About</span>
                                     </p>
                                 </li>
                             </Link>
                             <Link to="/auth/signup">
                                 <li className="nav-item">
-                                    <p className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                    <p className="px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75">
                                         <span className="ml-2">Sign Up</span>
                                     </p>
                                 </li>
                             </Link>
                             <Link to="/auth/login">
                                 <li className="nav-item">
-                                    <p className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                    <p className="px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75">
                                         <span className="ml-2">Log In</span>
                                     </p>
                                 </li>

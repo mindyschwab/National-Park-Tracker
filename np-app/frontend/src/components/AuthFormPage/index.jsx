@@ -38,15 +38,15 @@ function AuthFormPage() {
 
     return (
         <div className="flex items-center justify-center h-[90vh]">
-            <div className="bg-gray-800 rounded-lg shadow-xl p-8 w-full max-w-md">
-                <h2 className="text-3xl text-center font-bold text-gray-100 mb-8">{actionText}</h2>
+            <div className="bg-neutral-300 rounded-lg shadow-2xl p-8 w-full max-w-md">
+                <h2 className="text-3xl text-center font-bold  mb-8">{actionText}</h2>
                 <form className="space-y-6" onSubmit={handleSubmit}>
                     <div>
-                        <label className="block text-gray-100 font-bold mb-2" htmlFor="email">
+                        <label className="block  font-bold mb-2" htmlFor="email">
                             Email
                         </label>
                         <input
-                            className="w-full p-2 text-gray-900 rounded-md focus:outline-none focus:ring focus:border-blue-600"
+                            className="w-full p-2 text-neutral-900 rounded-md focus:outline-none focus:ring focus:border-blue-600"
                             id="email"
                             name="email"
                             type="email"
@@ -57,11 +57,11 @@ function AuthFormPage() {
                         />
                     </div>
                     <div>
-                        <label className="block text-gray-100 font-bold mb-2" htmlFor="password">
+                        <label className="block  font-bold mb-2" htmlFor="password">
                             Password
                         </label>
                         <input
-                            className="w-full p-2 text-gray-900 rounded-md focus:outline-none focus:ring focus:border-blue-600"
+                            className="w-full p-2 text-neutral-900 rounded-md focus:outline-none focus:ring focus:border-blue-600"
                             id="password"
                             name="password"
                             type="password"
@@ -75,7 +75,7 @@ function AuthFormPage() {
                     <div>
                         <button
                             type="submit"
-                            className="w-full py-2 px-4 bg-green-700 text-gray-100 rounded-md hover:bg-green-800 transition duration-300">
+                            className="w-full py-2 px-4 bg-green-700 text-neutral-100 rounded-md hover:bg-green-800 transition duration-300">
                             {actionText}
                         </button>
                     </div>
