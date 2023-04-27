@@ -37,12 +37,12 @@ function Tip({ data, refreshTips }) {
             <div className="flex justify-end">
                 <button
                     onClick={() => { setShowEditForm(true) }}
-                    className=" bg-transparent hover:bg-indigo-500 text-indigo-700 font-semibold hover:text-white py-2 px-3 border border-indigo-600 hover:border-transparent rounded m-2">
+                    className=" bg-transparent hover:bg-indigo-500 text-indigo-700 font-semibold hover:text-white py-1 px-3 border border-indigo-600 hover:border-transparent rounded m-2">
                     Edit
                 </button>
                 <button
                     onClick={handleDelete}
-                    className="bg-transparent hover:bg-orange-500 text-orange-700 font-semibold hover:text-white py-2 px-3 border border-orange-600 hover:border-transparent rounded m-2">
+                    className="bg-transparent hover:bg-orange-500 text-orange-700 font-semibold hover:text-white py-1 px-3 border border-orange-600 hover:border-transparent rounded m-2">
                     Delete
                 </button>
             </div>

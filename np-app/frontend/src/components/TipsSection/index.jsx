@@ -35,7 +35,7 @@ function TipSection({ parkId }) {
         // clear the form
         setCreateFormData({
             userName: '',
-            tipContent: ''
+            tipContent: '',
         })
         // close the form
         setShowCreateForm(false)
@@ -75,14 +75,14 @@ function TipSection({ parkId }) {
             <h2 className=''>Tips</h2>
             <button
                 onClick={toggleCreateForm}
-                className="bg-green-700 hover:bg-green-600 text-white font-semibold hover:text-white py-2 px-3 border border-green-700 hover:border-transparent rounded"
+                className="bg-green-700 hover:bg-green-600 text-white font-semibold hover:text-white py-1 px-3 border border-green-700 hover:border-transparent rounded"
             >
                 {btnText}
             </button>
             {
                 showCreateForm && <form
                     onSubmit={handleSubmit}
-                    className="bg-gray-100 rounded-lg p-4 my-4 border-gray-700 border-2 w-[35vw] mx-auto text-right">
+                    className="bg-gray-100 rounded-lg p-4 my-4 border-neutral-400 border-2 w-[35vw] mx-auto text-right">
                     <input
                         name="userName"
                         className="px-2 py-1 w-full bg-gray-100"
@@ -93,14 +93,14 @@ function TipSection({ parkId }) {
                     <br />
                     <textarea
                         name="tipContent"
-                        className="p-2 my-2 h-[80px] w-full bg-gray-100"
+                        className="p-2 my-2 h-[80px] w-full bg-neutral-100"
                         placeholder="Share your thoughts!"
                         value={createFormData.content}
                         onChange={handleInputChange}
                     />
                     <button
                         type="submit"
-                        className="text-white hover:bg-gray-800 font-bold py-2 px-4 bg-gray-700 rounded cursor-pointer mr-2">
+                        className="text-white hover:bg-neutral-700 font-bold py-1 px-4 bg-neutral-700 rounded cursor-pointer mr-2">
                         Post
                     </button>
                 </form>

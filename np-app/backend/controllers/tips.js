@@ -56,7 +56,7 @@ router.post('/', authMiddleware, (req, res) => {
         ...req.body,
         // The auth middleware validated the JWT token 
         // and added the decoded payload to the req.user object
-        userID: req.user.id
+        userId: req.user.id
     })
         .then(tip => res.json(tip))
 })
@@ -74,7 +74,6 @@ router.put('/:id', authMiddleware, async (req, res) => {
     // Check if the user who sent the update request is the same user who created the tip
     const userTip = await db.Tip.findById(req.params.id)
     if (userTip.userId == req.user.id) {
-        console.log("inside if statement")
         // If it is the original author, update the tip
         const newTip = await db.Tip.findByIdAndUpdate(
             req.params.id,
