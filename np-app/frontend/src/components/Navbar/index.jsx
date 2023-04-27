@@ -12,7 +12,7 @@ function Navbar() {
     const [navbarOpen, setNavbarOpen] = useState(false);
     return (
         <>
-            <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-green-700 mb-3">
+            <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-green-700 ">
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                     <div className="w-full relative flex justify-between md:w-auto md:static md:block md:justify-start">
                         <Link to="/">
@@ -48,6 +48,13 @@ function Navbar() {
                                 <li className="nav-item">
                                     <p className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
                                         <span className="ml-2">About</span>
+                                    </p>
+                                </li>
+                            </Link>
+                            <Link to="/signup">
+                                <li className="nav-item">
+                                    <p className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                                        <span className="ml-2">Sign Up</span>
                                     </p>
                                 </li>
                             </Link>

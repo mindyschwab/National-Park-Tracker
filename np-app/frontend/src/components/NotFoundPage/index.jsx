@@ -7,7 +7,7 @@ function NotFoundPage() {
     return (
         <>
             <div id="not-found" className="h-screen w-screen bg-[url(${imageURL})">
-                <div className="mt-32">
+                <div className="pt-32">
                     <h2 className="text-2xl m-6">Page Not Found</h2>
                     <p> Oops! Looks like you wandered off the trail</p>
 

@@ -19,3 +19,8 @@ export async function updateTip(tip, id) {
     const { data } = await axios.put(`/api/tips/${id}`, tip)
     return data
 }
+
+export async function postUser(user) {
+    const { data } = await axios.post('/api/users', user)
+    return data
+}

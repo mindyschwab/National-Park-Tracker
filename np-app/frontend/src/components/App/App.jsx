@@ -7,8 +7,10 @@ import AboutPage from "../AboutPage"
 import Card from "../Card"
 import DetailsPage from "../DetailsPage"
 import MyParksPage from "../MyParksPage"
-import './App.css'
+import SignUpPage from "../SignUpPage"
 import NotFoundPage from "../NotFoundPage";
+import './App.css'
+
 
 function App() {
   const [parks, setParks] = useState([])
@@ -41,6 +43,7 @@ function App() {
           <Route path='/details/:id' element={<DetailsPage parkData={detailPage} updatePark={setDetailPage} />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/my-parks" element={<MyParksPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
 

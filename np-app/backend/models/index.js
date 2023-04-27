@@ -13,5 +13,6 @@ const mongodbUri = process.env.MONGODBURI;
 // Export models and seed data to `server.js`
 module.exports = {
     Tip: require('./tip'),
+    User: require('./user'),
     seedTips: require('./seed')
 }
