@@ -28,9 +28,11 @@ function AuthFormPage() {
         if (formType === 'login') {
             const { token } = await logIn(formData)
             localStorage.setItem('userToken', token)
+            alert("You have been logged in")
         } else {
             const { token } = await signUp(formData)
             localStorage.setItem('userToken', token)
+            alert("You have successfully signed up")
         }
         // redirect to the home page after signing/logging in
         navigate('/')
