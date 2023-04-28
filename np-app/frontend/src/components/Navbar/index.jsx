@@ -11,7 +11,7 @@ function Navbar() {
                     <div className="w-full relative flex justify-between md:w-auto md:static md:block md:justify-start">
                         <Link to="/">
                             <p className="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white">
-                                National Park Tracker
+                                Find Your Park
                             </p>
                         </Link>
 
