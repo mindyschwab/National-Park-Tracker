@@ -1,9 +1,21 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react";
+
 
 // resource for responsive navbar using tailwind and react: https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/navbars
 function Navbar() {
     const [navbarOpen, setNavbarOpen] = useState(false);
+
+    const navigate = useNavigate();
+    // Execute auth logic on form submit
+    async function logOut(event) {
+        event.preventDefault()
+        localStorage.clear()
+        // redirect to the home page after logging out
+        alert("You have been logged out")
+        navigate('/')
+    }
+
     return (
         <>
             <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-green-700 ">
@@ -57,6 +69,15 @@ function Navbar() {
                                         <span className="ml-2">Log In</span>
                                     </p>
                                 </li>
+                            </Link>
+                            <Link to="/auth/logout">
+                                <button className="nav-item"
+                                    onClickCapture={logOut}
+                                >
+                                    <p className="px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75">
+                                        <span className="ml-2">Log Out</span>
+                                    </p>
+                                </button>
                             </Link>
                         </ul>
                     </div>
