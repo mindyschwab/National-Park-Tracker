@@ -54,7 +54,6 @@ app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist')))
 // passport.serializeUser(User.serializeUser());
 // passport.deserializeUser(User.deserializeUser());
 
-
 /* Mount routes
 --------------------------------------------------------------- */
 // When a GET request is sent to `/seed`, the tips collection is seeded
@@ -78,11 +77,9 @@ app.get('/api/seed', function (req, res) {
 app.use('/api/tips', tipsCtrl)
 app.use('/api/users', usersCtrl)
 
-
-
-// other route
+// Any other route not matching the routes above gets routed by React
 app.get('*', (req, res) => {
-    res.send("This is the other route");
+    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html'));
 });
 
 /* Tell the app to listen on the specified port
