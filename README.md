@@ -26,13 +26,13 @@ Run npm install to install all dependencies listed in the package.json file.
 
 Update .env file with your database connection string, api key and assign port 3000.
 
-Run npm install to install all dependencies.
-
-Enter command npm run dev to connect to MongoDB. Open local server on port 3000 to view the page in the browser. 
+Enter command npm run backend to connect to MongoDB. Open local server on port 3000 to view the page in the browser. 
 
 Navigate to localhost:3000/seed to seed inital data to MongoDB database.
 
-Navigate between the views using the navigation bar at the top of the website. 
+Enter command npm run frontend to start the React server.
+
+Navigate to localhost:5173 to view the page in the browser.
 
 <br>
 
@@ -74,9 +74,9 @@ https://www.figma.com/file/I07TwyrIivxYVoP24kShV0/National-Park-Tracker-Wire-Fra
 <br>
 
 ## Unsolved Problems/Hurdles
-WIP
+- Authentication was challenging to implement. I was able to get the login and sign up forms to work, but I need to make additional updates to the tips components and navbar to improve the user experience.
 
 <br>
 
 ## Next Steps
-<a href="https://find-your-park.herokuapp.com/"> Find Your Park </a>  will continue to grow in the coming months to include ability to filter the index page and search functionality for national parks. Stay tuned. 
+<a href="https://find-your-park.herokuapp.com/"> Find Your Park </a>  will continue to grow in the coming months to include passport authentication, ability to filter the index page, and search functionality for national parks. Stay tuned. 

@@ -7,23 +7,19 @@ import { getData } from '../../../utils/api';
 function DetailsPage({ parkData, updatePark }) {
     let { id } = useParams()
     const apiKey = import.meta.env.VITE_API_KEY
-    console.log("data at the top is" + parkData)
 
     // On component mount check if parkkData is defined. If not defined, use the URL to query the API
     useEffect(() => {
         if (!parkData) {
-            console.log(`https://developer.nps.gov/api/v1/parks?&api_key=${apiKey}&id=${id}`)
             getData(`https://developer.nps.gov/api/v1/parks?&api_key=${apiKey}&id=${id}`)
                 .then(res => {
-                    console.log(res.data)
                     updatePark(res.data[0])
                 })
         }
     }, [])
 
-    let page = <p>Loading National Park information... </p>
+    let page = <p className='text-xl m-16'>Loading National Park information... </p>
     if (parkData) {
-        console.log("park data is: " + parkData)
         page =
             <div className='p-8'>
                 <p className='text-2xl p-4'>{parkData.fullName}</p>

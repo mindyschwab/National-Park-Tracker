@@ -42,7 +42,7 @@ function App() {
             />} />
           <Route path='/details/:id' element={<DetailsPage parkData={detailPage} updatePark={setDetailPage} />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/my-parks" element={<MyParksPage />} />
+          <Route path="/my-parks" element={<MyParksPage parkData={parks} />} />
           <Route path="/auth/:formType" element={<AuthFormPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
