@@ -2,7 +2,6 @@
 SEI Mariposa Capstone Project: MERN app for National Parks  <a href="https://find-your-park.herokuapp.com/"> Find Your Park </a>
 
 
-![alt text](/np-app/frontend/public/NP%20App.png "App screenshot") 
 
 
 ## Technologies Used
