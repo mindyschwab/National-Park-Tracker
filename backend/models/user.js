@@ -12,6 +12,6 @@ const userSchema = new mongoose.Schema({
 });
 
 // add passport plug in for user schema (adds support for username and password)
-userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
+userSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('User', userSchema);

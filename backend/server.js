@@ -3,11 +3,15 @@
 require('dotenv').config()
 const path = require('path');
 const express = require('express');
-const cors = require('cors')
+const cors = require('cors');
+const session = require('express-session');
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
 
 /* Require the db connection, models, and seed data
 --------------------------------------------------------------- */
 const db = require('./models');
+const User = require('./models/user');
 
 /* Require the routes in the controllers folder
 --------------------------------------------------------------- */
@@ -18,6 +22,19 @@ const usersCtrl = require('./controllers/users');
 --------------------------------------------------------------- */
 const app = express();
 
+/* Configure the session
+--------------------------------------------------------------- */
+const sessionConfig = {
+    secret: 'thisshouldbeabettersecret!',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        httpOnly: true,
+        expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+        maxAge: 1000 * 60 * 60 * 24 * 7
+    }
+}
+
 /* Middleware (app.use)
 --------------------------------------------------------------- */
 // cross origin allowance
@@ -27,7 +44,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 // use the React build folder for static files
 app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist')))
-
+app.use(session(sessionConfig));
+app.use(passport.initialize());
+// passport middleware required for persistent login sessionszs
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+// how to store and unstore users in the session
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 /* Mount routes
 --------------------------------------------------------------- */
@@ -46,6 +70,15 @@ app.get('/api/seed', function (req, res) {
                 })
         })
 });
+
+// temp route to test that user registration is working 
+app.get('/fakeuser', async (req, res) => {
+    const user = new User({ email: 'test1@email.com', username: 'test1' })
+    // register method provided by passport-local-mongoose, creates new user with hashed password and make sure that user in unqiue
+    const newUser = await User.register(user, 'password', (err, user) => {
+        res.send(newUser);
+    })
+})
 
 // // This tells our app to look at the controllers files
 // // to handle all routes that begin with `localhost:3000/tips` or `localhost:3000/api/users`
