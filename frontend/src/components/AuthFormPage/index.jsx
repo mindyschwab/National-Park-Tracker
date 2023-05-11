@@ -5,6 +5,7 @@ import { signUp, logIn } from "../../../utils/backend";
 function AuthFormPage() {
     const [formData, setFormData] = useState({
         email: '',
+        username: '',
         password: ''
     });
 
@@ -24,14 +25,17 @@ function AuthFormPage() {
     // Execute auth logic on form submit
     async function handleSubmit(event) {
         event.preventDefault()
+        console.log(formData)
+        console.log(formType)
         // check what the URL parameter is to determine what request to make
         if (formType === 'login') {
             const { token } = await logIn(formData)
             localStorage.setItem('userToken', token)
             alert("You have been logged in")
         } else {
-            const { token } = await signUp(formData)
-            localStorage.setItem('userToken', token)
+            console.log('this is the else statement')
+            await signUp(formData)
+            // localStorage.setItem('userToken', token)
             alert("You have successfully signed up")
         }
         // redirect to the home page after signing/logging in
@@ -55,6 +59,21 @@ function AuthFormPage() {
                             required
                             placeholder="Email address"
                             value={formData.email}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div>
+                        <label className="block  font-bold mb-2" htmlFor="username">
+                            User Name
+                        </label>
+                        <input
+                            className="w-full p-2 text-neutral-900 rounded-md focus:outline-none focus:ring focus:border-blue-600"
+                            id="username"
+                            name="username"
+                            type="username"
+                            required
+                            placeholder="User Name"
+                            value={formData.username}
                             onChange={handleInputChange}
                         />
                     </div>

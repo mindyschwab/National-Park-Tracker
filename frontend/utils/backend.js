@@ -22,7 +22,10 @@ export async function updateTip(tip, id) {
 }
 
 export async function signUp(user) {
+    console.log('this is the signUp function')
+    console.log('user is; ' + user)
     const { data } = await axios.post('/api/users/signup', user)
+    console.log('data is: ' + data)
     return data
 }
 
