@@ -64,8 +64,7 @@ router.post('/signup', async (req, res) => {
     const user = new db.User({ email, username });
     const registerUser = await db.User.register(user, password);
     console.log(registerUser)
-    res.redirect('/');
-
+    return res.send('signup successful');
 })
 
 /* Export these routes so that they are accessible in `server.js`
