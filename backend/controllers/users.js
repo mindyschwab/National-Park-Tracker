@@ -60,7 +60,11 @@ const config = require('../../jwt.config.js')
 
 router.post('/signup', async (req, res) => {
     console.log(req.body)
-    res.send('signup route hit')
+    const { email, username, password } = req.body;
+    const user = new db.User({ email, username });
+    const registerUser = await db.User.register(user, password);
+    console.log(registerUser)
+    res.redirect('/');
 
 })
 
