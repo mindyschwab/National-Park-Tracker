@@ -4,6 +4,7 @@ require('dotenv').config()
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
+const flash = require('connect-flash')
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
@@ -45,6 +46,7 @@ app.use(express.json())
 // use the React build folder for static files
 app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist')))
 app.use(session(sessionConfig));
+app.use(flash());
 app.use(passport.initialize());
 // passport middleware required for persistent login sessionszs
 app.use(passport.session());

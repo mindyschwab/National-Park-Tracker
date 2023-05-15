@@ -10,6 +10,10 @@ const jwt = require('jwt-simple')
 const express = require('express')
 // Router allows us to handle routing outisde of server.js
 const router = express.Router()
+const flash = require('connect-flash')
+const session = require('express-session');
+const catchAsync = require('../../frontend/utils/catchAsync');
+
 
 /* Require the db connection, and models
 --------------------------------------------------------------- */
@@ -17,7 +21,7 @@ const db = require('../models')
 
 /* Require the JWT config
 --------------------------------------------------------------- */
-const config = require('../../jwt.config.js')
+// const config = require('../../jwt.config.js')
 
 /* Routes
 --------------------------------------------------------------- */
@@ -58,14 +62,20 @@ const config = require('../../jwt.config.js')
 //     }
 // })
 
-router.post('/signup', async (req, res) => {
-    console.log(req.body)
-    const { email, username, password } = req.body;
-    const user = new db.User({ email, username });
-    const registerUser = await db.User.register(user, password);
-    console.log(registerUser)
-    return res.send('signup successful');
-})
+router.post('/signup', catchAsync(async (req, res) => {
+    try {
+        console.log("in the try" + req.body)
+        const { email, username, password } = req.body;
+        const user = new db.User({ email, username });
+        const registerUser = await db.User.register(user, password);
+        console.log(registerUser)
+        return res.send('signup successful');
+    } catch (e) {
+        req.flash('error', e.message);
+        res.redirect('/signup');
+    }
+
+}))
 
 /* Export these routes so that they are accessible in `server.js`
 --------------------------------------------------------------- */

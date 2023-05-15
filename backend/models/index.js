@@ -7,7 +7,6 @@ const mongodbUri = process.env.MONGODBURI;
 // It will wait for Mongoose to connect to MongoDB Atlas
 (async function () {
     await mongoose.connect(mongodbUri);
-    console.log('Mongoose is connected to', mongodbUri);
 })().catch(err => console.log('MongoDB connection error:\n' + err))
 
 // Export models and seed data to `server.js`
